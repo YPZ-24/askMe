@@ -10,8 +10,9 @@ export const getQuestion = async (_id) => {
     return questionFinded
 }
 
-export const getQuestions = async() => {
-    const questions = await Question.find().exec()
+export const getQuestions = async(withResCorrect) => {
+    const limit = withResCorrect ? '' : '-resCorrect'
+    const questions = await Question.find({},`${limit} -__v`).exec()
     return questions
 }
 
@@ -19,13 +20,18 @@ export const deleteQuestion = async(_id) => {
     await Question.findByIdAndDelete(_id).exec()
 }
 
-export const updateQuestion = async(_id, { question, resA, resB, resC, resD, resCorrect}) => {
-    const questionFinded = await Question.findById(_id).exec();
-    questionFinded.question = question;
+export const updateQuestion = async (_id, {question, resA, resB, resC, resD, resCorrect}) => {
+    const questionFinded = await Question.findById(_id).exec()
+    questionFinded.question = question
     questionFinded.resA = resA
     questionFinded.resB = resB
     questionFinded.resC = resC
     questionFinded.resD = resD
     questionFinded.resCorrect = resCorrect
     await questionFinded.save()
+}
+
+export const getQuestionAnswer = async (_id) => {
+    const {resCorrect} = await Question.findById(_id, 'resCorrect -_id').exec()
+    return resCorrect
 }

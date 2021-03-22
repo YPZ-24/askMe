@@ -1,15 +1,29 @@
 import {Router} from 'express'
 const router = Router()
-import {createQuestion, deleteQuestion, getQuestion, getQuestions, updateQuestion} from '../database/question'
+import {createQuestion, deleteQuestion, getQuestion, getQuestions, updateQuestion, getQuestionAnswer} from '../database/question'
 import routeHelper from '../util/routeHelper'
 import validationHandler from '../util/validationHandler'
 import {createQuestionSchema} from '../schemas/question'
+
+//Get Questions with answer
+router.get('/question/correct', routeHelper(async (req, res)=>{
+    const questions = await getQuestions(true)
+    res.status(201).json(questions)
+}))
 
 //Create Question
 router.post('/question', validationHandler(createQuestionSchema), routeHelper(async (req, res)=>{
     const newQuestion = req.body
     await createQuestion(newQuestion)
     res.status(200).json("Question Created")
+}))
+
+//Validate Answer
+router.get("/question/:_id/validate/:answer", routeHelper(async (req, res)=>{
+    let {answer, _id} = req.params;
+    answer = answer.toLowerCase()
+    const resCorrect = await getQuestionAnswer(_id)
+    res.status(200).json(answer === resCorrect)
 }))
 
 //Get Question

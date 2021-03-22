@@ -4,27 +4,22 @@ import * as Yup from 'yup'
 const QuestionSchema = new Schema({
     question: {
         type: String,
-        lowercase: true,
         required: true
     },
     resA: {
         type: String,
-        lowercase: true,
         required: true
     },
     resB: {
         type: String,
-        lowercase: true,
         required: true
     },
     resC: {
         type: String,
-        lowercase: true,
         required: true
     },
     resD: {
         type: String,
-        lowercase: true,
         required: true
     },
     resCorrect: {

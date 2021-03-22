@@ -15,7 +15,6 @@ export function validationHandler(schema, check = 'body'){
             schema.validateSync(req[check]);
             next();
         }catch(e){
-            console.log("ERROR DE VALIDACION")
             next( new YupValidationError(e) );
         }
     }

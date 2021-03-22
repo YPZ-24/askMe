@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Carrois+Gothic+SC&family=Julius+Sans+One&family=Noto+Serif+TC:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body{
+    background: rgb(247, 247, 247);
+    padding: 30px;
+}
+
+#title{
+    font-family: 'Julius Sans One';
+    font-size: 3rem;
+    text-align: center;
+}
+
+textarea, select{
+    padding: 5px;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 3px;
+    width: 95%;
+}
+
+textarea:hover, select:hover{
+    border: 2px solid hsl(180, 50%, 60%);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#btnCreateQuestion{
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: hsl(276, 100%, 40%);
+    color: white;
+    border-radius: 60px;
+    transition: background-color 0.3s;
+}
+
+#btnCreateQuestion:hover{
+    background-color: hsl(180, 50%, 60%);
+    cursor: pointer
+}
+
+table, tr, td, th{
+    border-collapse: collapse;
+}
+
+table{
+    width: 100%;
+    margin-top: 20px;
+}
+
+thead > tr > th {
+    background-color: hsl(180, 50%, 60%);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: lighter;
+}
+
+tbody tr td{
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+tbody tr:nth-child(2n){
+    background-color: rgb(233, 233, 233);
+}
+
+tbody tr:hover{
+    background-color: rgb(218, 218, 218);
+    cursor: default
+}
+
+tbody i{
+    color: rgb(22, 22, 22);
+    transition: color 0.2s;
+}
+
+tbody i:hover{
+    color: hsl(180, 50%, 60%);
+    cursor: pointer
+}
+
+tbody tr td:first-child{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#addButton{
+    width: 50px;
+    height: 50px;
+    border-radius: 60px;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    background-color: hsl(276, 100%, 40%);
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color 0.3s;
+}
+
+#addButton:hover{
+    background-color: hsl(180, 50%, 60%);
+}

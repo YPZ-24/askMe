@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Carrois+Gothic+SC&family=Julius+Sans+One&family=Noto+Serif+TC:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(40deg, hsl(180, 50%, 60%) 0%, hsl(220, 50%, 60%) 100%);
+    width: 100vw;
+    height: 100vh;
+    display: "grid";
+    grid-template-rows: 10%, 20;
+}
+
+#conteQuestion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px;
+}
+
+p{
+    color: white;
+    font-family: 'Julius Sans One';
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#formButtons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+input[type="button"]{
+    background-color: rgba(236, 236, 236, 0.5);
+    border: 1px solid rgb(39, 39, 39);
+    font-family: 'Julius Sans One';
+    display: block;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-radius: 60px;
+}
+
+#btnAdmin{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+}

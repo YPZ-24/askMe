@@ -7,7 +7,6 @@ const options = {
     useCreateIndex: true
 }
 
-
 async function connect(){
     await mongoose.connect(config.DB.URL, options).then(()=>{
         console.log("--DB STARTED--");

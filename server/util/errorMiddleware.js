@@ -2,9 +2,7 @@ import YupValidationError from "./errors/YupValidationError";
 
 export default function errorMiddleware(error, req, res, next) {
     let errorObject;
-    
     if(error.name === 'YupValidationError'){
-        console.log("DE VALIDACIÓN")
         errorObject = {
             name: error.name,
             status: error.status,

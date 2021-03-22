@@ -13,7 +13,7 @@ app.use(cors());
 app.use(questionRouter)
 
 //STATIC FILES
-app.use(express.static(process.env.PWD, 'public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 //ERROR MIDDLEWARE
 app.use(errorMiddleware)

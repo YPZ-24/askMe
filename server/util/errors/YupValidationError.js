@@ -1,7 +1,7 @@
-export default class ValidationError extends Error{
+export default class YupValidationError extends Error{
     constructor(error){
         super(error.message);
-        this.name = 'ValidationError';
+        this.name = 'YupValidationError';
         this.status = 400;
         this.path = error.path;
     }

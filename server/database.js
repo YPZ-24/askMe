@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import config from '../config/config';
+import config from './config/config';
 
 const options = {   
     useNewUrlParser: true, 
@@ -7,7 +7,6 @@ const options = {
     useCreateIndex: true
 }
 
-console.log(config.DB.URL);
 
 async function connect(){
     await mongoose.connect(config.DB.URL, options).then(()=>{

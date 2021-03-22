@@ -11,6 +11,9 @@ app.use(cors());
 
 //ROUTES
 app.use(questionRouter)
+app.use('/', (req, res)=>{
+    res.send("Hi")
+})
 
 //ERROR MIDDLEWARE
 app.use(errorMiddleware)
